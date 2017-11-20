@@ -34,7 +34,7 @@ DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$*.Td
 
 CPPFLAGS = \
  -I. \
- -m32 \
+ -m64 \
  -Wall \
  -D__STDC_FORMAT_MACROS \
  -D_XOPEN_SOURCE=600 \
@@ -52,7 +52,7 @@ CXXFLAGS = \
  ${OPT} ${DEBUG} \
  ${EMPTY}
 
-LINK = g++ -m32 -lpthread ${DEBUG}
+LINK = g++ -m64 -lpthread ${DEBUG}
 endif
 
 ifeq "${OSTYPE}" "zOS"

@@ -140,27 +140,27 @@ endif
 # List all source files (NOT headers) in SRCS; these will be
 # processed to have dependencies auto-generated
 SRCS = \
- mmaptest.c \
+ sample.c \
  ${EMPTY}
 
 # Targets start here
 
 ifeq "${OSTYPE}" "zOS"
-PROGRAMS := mmaptest
+PROGRAMS := sample
 endif
 
 ifeq "${OSTYPE}" "zLinux"
 PROGRAMS := 
 endif
 
-default: mmaptest
+default: sample
 
 ifeq "${OSTYPE}" "zOS"
 MVSOBJS := \
  ${EMPTY}
 endif
 
-mmaptest: mmaptest.o \
+sample: sample.o \
  ${MVSOBJS} \
  ${EMPTY}
 	${LINK} -o $@ $^
